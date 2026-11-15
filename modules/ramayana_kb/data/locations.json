@@ -1,0 +1,37 @@
+
+[
+  {
+    "location_id": "AYODHYA",
+    "name": {
+      "english": "Ayodhya",
+      "sanskrit": "अयोध्या",
+      "iast": "Ayodhyā"
+    },
+    "aliases": [
+      "Kingdom of Ayodhya",
+      "Ayodhya Nagari"
+    ],
+    "location_type": "city",
+    "description": "Ayodhya is the royal city ruled by King Dasharatha and the home of Rama and his family.",
+    "associated_characters": [
+      "RAMA",
+      "DASHARATHA",
+      "LAKSHMANA",
+      "VISHVAMITRA",
+      "VASISHTHA"
+    ],
+    "associated_kandas": [
+      "BALA_KANDA"
+    ],
+    "associated_themes": [
+      "Kingship",
+      "Family",
+      "Royal duty"
+    ],
+    "source_reference_ids": [
+      "REF_BALA_019"
+    ],
+    "verification_status": "partially_verified",
+    "notes": "The selected scene takes place in the royal audience at Ayodhya. The exact hall or building is not identified in this record."
+  }
+]

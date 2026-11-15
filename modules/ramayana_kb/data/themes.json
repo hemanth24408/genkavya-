@@ -1,0 +1,63 @@
+
+[
+  {
+    "theme_id": "DUTY",
+    "name": {
+      "english": "Duty",
+      "sanskrit": "धर्म",
+      "iast": "Dharma"
+    },
+    "description": "The responsibility of an individual to fulfil moral, social, and personal obligations. In this scene, the theme appears through Dasharatha's responsibility to honour his commitment and Vasishtha's advice.",
+    "related_concepts": [
+      "Responsibility",
+      "Righteousness",
+      "Commitment",
+      "Obligation"
+    ],
+    "associated_characters": [
+      "RAMA",
+      "VISHVAMITRA",
+      "DASHARATHA",
+      "VASISHTHA"
+    ],
+    "associated_scenes": [
+      "BALA_SCENE_001"
+    ],
+    "associated_kandas": [
+      "BALA_KANDA"
+    ],
+    "source_reference_ids": [
+      "REF_BALA_019"
+    ],
+    "verification_status": "partially_verified"
+  },
+  {
+    "theme_id": "PARENTAL_AFFECTION",
+    "name": {
+      "english": "Parental Affection",
+      "sanskrit": "वात्सल्य",
+      "iast": "Vātsalya"
+    },
+    "description": "The affection and emotional attachment between parents and their children. In this scene, Dasharatha's reluctance to send Rama reflects his deep parental attachment.",
+    "related_concepts": [
+      "Love",
+      "Care",
+      "Emotional Attachment",
+      "Family"
+    ],
+    "associated_characters": [
+      "DASHARATHA",
+      "RAMA"
+    ],
+    "associated_scenes": [
+      "BALA_SCENE_001"
+    ],
+    "associated_kandas": [
+      "BALA_KANDA"
+    ],
+    "source_reference_ids": [
+      "REF_BALA_019"
+    ],
+    "verification_status": "partially_verified"
+  }
+]

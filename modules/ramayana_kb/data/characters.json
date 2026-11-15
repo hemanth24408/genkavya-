@@ -1,0 +1,237 @@
+
+[
+  {
+    "character_id": "RAMA",
+    "name": {
+      "english": "Rama",
+      "sanskrit": "राम",
+      "iast": "Rāma"
+    },
+    "aliases": [
+      "Raghava",
+      "Raghunandana",
+      "Dasharathi",
+      "Kakutstha"
+    ],
+    "character_type": "human",
+    "primary_role": "Prince of Ayodhya and central protagonist of the Ramayana",
+    "description": "Rama is the son of King Dasharatha and Queen Kausalya. He is associated with righteousness, courage, duty, and protection.",
+    "attributes": [
+      "Courage",
+      "Righteousness",
+      "Compassion",
+      "Duty"
+    ],
+    "relationships": [
+      {
+        "related_character_id": "DASHARATHA",
+        "relationship": "son_of"
+      },
+      {
+        "related_character_id": "VISHVAMITRA",
+        "relationship": "student_and_protected_prince"
+      }
+    ],
+    "source_reference_ids": [
+      "REF_BALA_019"
+    ],
+    "verification_status": "partially_verified"
+  },
+  {
+    "character_id": "DASHARATHA",
+    "name": {
+      "english": "Dasharatha",
+      "sanskrit": "दशरथ",
+      "iast": "Daśaratha"
+    },
+    "aliases": [
+      "King of Ayodhya",
+      "Dasharathi's father"
+    ],
+    "character_type": "human",
+    "primary_role": "King of Ayodhya and father of Rama",
+    "description": "Dasharatha is the king of Ayodhya and the father of Rama. He is deeply attached to his son.",
+    "attributes": [
+      "Kingship",
+      "Fatherly affection",
+      "Responsibility"
+    ],
+    "relationships": [
+      {
+        "related_character_id": "RAMA",
+        "relationship": "father_of"
+      },
+      {
+        "related_character_id": "VISHVAMITRA",
+        "relationship": "receives_request_from"
+      }
+    ],
+    "source_reference_ids": [
+      "REF_BALA_019"
+    ],
+    "verification_status": "partially_verified"
+  },
+  {
+    "character_id": "VISHVAMITRA",
+    "name": {
+      "english": "Vishvamitra",
+      "sanskrit": "विश्वामित्र",
+      "iast": "Viśvāmitra"
+    },
+    "aliases": [
+      "Sage Vishvamitra",
+      "Kausika"
+    ],
+    "character_type": "sage",
+    "primary_role": "Sage who requests Rama's assistance in protecting his sacrifice",
+    "description": "Vishvamitra is a powerful sage who approaches King Dasharatha for help in protecting his sacrificial observances from Rakshasas.",
+    "attributes": [
+      "Wisdom",
+      "Determination",
+      "Spiritual power",
+      "Knowledge"
+    ],
+    "relationships": [
+      {
+        "related_character_id": "RAMA",
+        "relationship": "guide_and_protector"
+      },
+      {
+        "related_character_id": "DASHARATHA",
+        "relationship": "requests_assistance_from"
+      }
+    ],
+    "source_reference_ids": [
+      "REF_BALA_019"
+    ],
+    "verification_status": "partially_verified"
+  },
+  {
+    "character_id": "MARICHA",
+    "name": {
+      "english": "Maricha",
+      "sanskrit": "मारीच",
+      "iast": "Mārīca"
+    },
+    "aliases": [],
+    "character_type": "rakshasa",
+    "primary_role": "Rakshasa who disrupts Vishvamitra's sacrifice",
+    "description": "Maricha is a Rakshasa associated with the disruption of Vishvamitra's sacrificial observances.",
+    "attributes": [
+      "Disruption",
+      "Opposition to the sacrifice"
+    ],
+    "relationships": [
+      {
+        "related_character_id": "SUBAHU",
+        "relationship": "associated_with"
+      }
+    ],
+    "source_reference_ids": [
+      "REF_BALA_019"
+    ],
+    "verification_status": "partially_verified"
+  },
+  {
+    "character_id": "SUBAHU",
+    "name": {
+      "english": "Subahu",
+      "sanskrit": "सुबाहु",
+      "iast": "Subāhu"
+    },
+    "aliases": [],
+    "character_type": "rakshasa",
+    "primary_role": "Rakshasa who disrupts Vishvamitra's sacrifice",
+    "description": "Subahu is a Rakshasa associated with Maricha in the disruption of Vishvamitra's sacrificial observances.",
+    "attributes": [
+      "Disruption",
+      "Opposition to the sacrifice"
+    ],
+    "relationships": [
+      {
+        "related_character_id": "MARICHA",
+        "relationship": "associated_with"
+      }
+    ],
+    "source_reference_ids": [
+      "REF_BALA_019"
+    ],
+    "verification_status": "partially_verified"
+  },
+
+  {
+    "character_id": "LAKSHMANA",
+    "name": {
+      "english": "Lakshmana",
+      "sanskrit": "लक्ष्मण",
+      "iast": "Lakṣmaṇa"
+    },
+    "aliases": [
+      "Saumitri",
+      "Sumitra's son"
+    ],
+    "character_type": "human",
+    "primary_role": "Prince of Ayodhya and younger brother of Rama",
+    "description": "Lakshmana is the son of King Dasharatha and Sumitra. He accompanies Rama when Rama departs with Vishvamitra.",
+    "attributes": [
+      "Loyalty",
+      "Courage",
+      "Devotion",
+      "Brotherly affection"
+    ],
+    "relationships": [
+      {
+        "related_character_id": "RAMA",
+        "relationship": "younger_brother_of"
+      },
+      {
+        "related_character_id": "DASHARATHA",
+        "relationship": "son_of"
+      },
+      {
+        "related_character_id": "VISHVAMITRA",
+        "relationship": "travels_with"
+      }
+    ],
+    "source_reference_ids": [
+      "REF_BALA_019"
+    ],
+    "verification_status": "partially_verified"
+  },
+  {
+    "character_id": "VASISHTHA",
+    "name": {
+      "english": "Vasishtha",
+      "sanskrit": "वसिष्ठ",
+      "iast": "Vasiṣṭha"
+    },
+    "aliases": [
+      "Sage Vasishtha",
+      "Royal preceptor of Ayodhya"
+    ],
+    "character_type": "sage",
+    "primary_role": "Royal preceptor who advises King Dasharatha",
+    "description": "Vasishtha is a revered sage and the royal preceptor of Ayodhya. He advises Dasharatha to honour his commitment to Vishvamitra and explains Vishvamitra's extraordinary abilities.",
+    "attributes": [
+      "Wisdom",
+      "Knowledge",
+      "Spiritual authority",
+      "Guidance"
+    ],
+    "relationships": [
+      {
+        "related_character_id": "DASHARATHA",
+        "relationship": "advises"
+      },
+      {
+        "related_character_id": "VISHVAMITRA",
+        "relationship": "recognises_spiritual_power_of"
+      }
+    ],
+    "source_reference_ids": [
+      "REF_BALA_019"
+    ],
+    "verification_status": "partially_verified"
+  }
+
+]

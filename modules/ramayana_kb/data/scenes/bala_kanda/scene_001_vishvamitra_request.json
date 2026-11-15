@@ -1,0 +1,395 @@
+
+{
+  "scene_id": "BALA_SCENE_001",
+
+  "scene_name": {
+    "english": "Vishvamitra's Request to King Dasharatha",
+    "sanskrit": null,
+    "iast": null
+  },
+
+  "classification": {
+    "kanda_id": "BALA_KANDA",
+    "kanda_name": "Bala Kanda",
+    "chapter_number": 3,
+    "chapter_name": "Vishvamitra's Request to King Dasharatha",
+    "scene_number": 1,
+    "scene_category": "sage_request"
+  },
+
+  "source": {
+    "source_id": "VALMIKI_RAMAYANA_DUTT",
+    "book_title": "The Ramayana of Valmiki",
+    "translator": "Manmatha Nath Dutt",
+    "website": "Pustakalaya",
+    "chapter_url": "https://pustakalaya-org.github.io/classics-in-translation/ramayana_dutt/balakandam-part-2-section-xviii-to.html",
+    "reference_location": "Bala Kanda, Website Chapter 3, Part 2, Sections XIX to XXII (Section identifiers 3.2 to 3.5).",
+    "original_verse_reference": null
+  },
+
+  "setting": {
+    "primary_location_id": "AYODHYA",
+    "other_locations": [],
+    "time_period": null,
+    "environment": "A royal audience in which Sage Vishvamitra addresses King Dasharatha.",
+    "description": "Vishvamitra visits King Dasharatha and requests Rama's assistance in protecting his sacrificial ceremony. The discussion leads to Dasharatha's initial refusal, Vasishtha's intervention and the eventual departure of Rama and Lakshmana with Vishvamitra."
+  },
+
+  "background": {
+    "summary": "Sage Vishvamitra is performing a sacrifice that is being disrupted by two Rakshasas, Maricha and Subahu. They shower flesh and gore upon the sacrificial altar, frustrating the ceremony. Vishvamitra explains that he cannot utter a curse against them while engaged in the sacrifice. He therefore approaches King Dasharatha and requests his eldest son Rama to protect the ceremony. Dasharatha is distressed by the request and initially refuses, but Vasishtha advises him to honour his promise. Dasharatha eventually agrees and sends Rama and Lakshmana with Vishvamitra.",
+    "previous_scene_ids": [],
+    "relevant_events": [
+      "Maricha and Subahu disrupt Vishvamitra's sacrificial ceremony.",
+      "Vishvamitra approaches King Dasharatha for assistance.",
+      "Vishvamitra requests Rama for the protection of his sacrifice.",
+      "Dasharatha initially refuses because of his concern for Rama.",
+      "Vasishtha advises Dasharatha to honour his promise.",
+      "Dasharatha sends Rama and Lakshmana with Vishvamitra."
+    ]
+  },
+
+  "characters": [
+    {
+      "character_id": "VISHVAMITRA",
+      "role_in_scene": "Sage requesting assistance",
+      "actions": [
+        "Explains the disruption of his sacrifice by Maricha and Subahu.",
+        "Requests that King Dasharatha send Rama with him.",
+        "States that Rama will be protected by his own power.",
+        "Promises to confer blessings upon Rama.",
+        "Explains that Rama is capable of defeating the Rakshasas."
+      ],
+      "motivation": "To complete his sacrificial ceremony without interference from the Rakshasas.",
+      "emotional_state": "Determined and composed while making his request."
+    },
+    {
+      "character_id": "DASHARATHA",
+      "role_in_scene": "King receiving Vishvamitra's request",
+      "actions": [
+        "Receives Vishvamitra and listens to his request.",
+        "Becomes overwhelmed with grief after hearing that Rama is being requested.",
+        "Remains insensible for a time and subsequently regains his senses.",
+        "Initially refuses to send Rama and offers to accompany Vishvamitra with his forces instead.",
+        "Eventually agrees after receiving Vasishtha's advice.",
+        "Summons Rama and Lakshmana and entrusts them to Vishvamitra."
+      ],
+      "motivation": "To protect Rama from the danger he believes the Rakshasas pose.",
+      "emotional_state": "Overwhelmed by grief, paternal affection and concern for Rama."
+    },
+    {
+      "character_id": "RAMA",
+      "role_in_scene": "Prince whose assistance is requested",
+      "actions": [
+        "Is requested by Vishvamitra to protect the sacrifice.",
+        "Is summoned by King Dasharatha.",
+        "Accompanies Vishvamitra after his father agrees to the request."
+      ],
+      "motivation": null,
+      "emotional_state": null
+    },
+    {
+      "character_id": "LAKSHMANA",
+      "role_in_scene": "Rama's younger brother who accompanies him",
+      "actions": [
+        "Is summoned along with Rama.",
+        "Accompanies Rama and Vishvamitra on their departure."
+      ],
+      "motivation": null,
+      "emotional_state": null
+    },
+    {
+      "character_id": "VASISHTHA",
+      "role_in_scene": "Royal sage and counsellor advising Dasharatha",
+      "actions": [
+        "Advises Dasharatha to honour his promise to Vishvamitra.",
+        "Explains Vishvamitra's capability and Rama's ability to overcome the Rakshasas."
+      ],
+      "motivation": "To persuade Dasharatha to uphold his promise and follow the path of righteousness.",
+      "emotional_state": "Composed and authoritative."
+    },
+    {
+      "character_id": "MARICHA",
+      "role_in_scene": "Rakshasa disrupting Vishvamitra's sacrifice",
+      "actions": [
+        "Participates in disturbing the sacrificial ceremony by showering flesh and gore upon the altar."
+      ],
+      "motivation": null,
+      "emotional_state": null
+    },
+    {
+      "character_id": "SUBAHU",
+      "role_in_scene": "Rakshasa disrupting Vishvamitra's sacrifice",
+      "actions": [
+        "Participates in disturbing the sacrificial ceremony by showering flesh and gore upon the altar."
+      ],
+      "motivation": null,
+      "emotional_state": null
+    }
+  ],
+
+  "event_sequence": [
+    {
+      "event_id": "BALA_SCENE_001_EVENT_01",
+      "sequence_number": 1,
+      "description": "Vishvamitra explains that Maricha and Subahu disrupt his sacrificial ceremony by showering flesh and gore upon the altar.",
+      "characters_involved": [
+        "VISHVAMITRA",
+        "MARICHA",
+        "SUBAHU"
+      ],
+      "location_id": null,
+      "cause": "The Rakshasas seek to disturb the sacrificial ceremony.",
+      "consequence": "The sacrificial ceremony is interrupted and Vishvamitra's efforts are frustrated.",
+      "source_reference_ids": [
+        "REF_BALA_019"
+      ]
+    },
+    {
+      "event_id": "BALA_SCENE_001_EVENT_02",
+      "sequence_number": 2,
+      "description": "Vishvamitra explains that he cannot utter a curse against the Rakshasas while engaged in the sacrificial observance.",
+      "characters_involved": [
+        "VISHVAMITRA"
+      ],
+      "location_id": null,
+      "cause": "The nature of his sacrificial observance prevents him from expressing his wrath through a curse.",
+      "consequence": "Vishvamitra decides to seek assistance from King Dasharatha.",
+      "source_reference_ids": [
+        "REF_BALA_019"
+      ]
+    },
+    {
+      "event_id": "BALA_SCENE_001_EVENT_03",
+      "sequence_number": 3,
+      "description": "Vishvamitra requests King Dasharatha to send his eldest son Rama to protect the sacrifice for the prescribed period of ten nights.",
+      "characters_involved": [
+        "VISHVAMITRA",
+        "DASHARATHA",
+        "RAMA"
+      ],
+      "location_id": null,
+      "cause": "The need to protect the sacrifice from Maricha and Subahu.",
+      "consequence": "Dasharatha is faced with the request to send his beloved son away.",
+      "source_reference_ids": [
+        "REF_BALA_019"
+      ]
+    },
+    {
+      "event_id": "BALA_SCENE_001_EVENT_04",
+      "sequence_number": 4,
+      "description": "Vishvamitra assures Dasharatha that Rama can defeat the Rakshasas while under his protection and promises to confer blessings upon him.",
+      "characters_involved": [
+        "VISHVAMITRA",
+        "DASHARATHA",
+        "RAMA"
+      ],
+      "location_id": null,
+      "cause": "Dasharatha may be concerned about sending Rama into danger.",
+      "consequence": "Vishvamitra emphasizes Rama's capability and his own ability to protect him.",
+      "source_reference_ids": [
+        "REF_BALA_019"
+      ]
+    },
+    {
+      "event_id": "BALA_SCENE_001_EVENT_05",
+      "sequence_number": 5,
+      "description": "After hearing Vishvamitra's request, Dasharatha becomes overwhelmed with grief, remains insensible for a time and subsequently regains his senses.",
+      "characters_involved": [
+        "DASHARATHA",
+        "VISHVAMITRA"
+      ],
+      "location_id": null,
+      "cause": "The distress caused by the request to send Rama away.",
+      "consequence": "Dasharatha initially refuses to part with Rama.",
+      "source_reference_ids": [
+        "REF_BALA_019"
+      ]
+    },
+    {
+      "event_id": "BALA_SCENE_001_EVENT_06",
+      "sequence_number": 6,
+      "description": "Dasharatha objects to sending Rama, explaining that his son is young and that he would rather accompany Vishvamitra himself with his army to protect the sacrifice.",
+      "characters_involved": [
+        "DASHARATHA",
+        "VISHVAMITRA"
+      ],
+      "location_id": null,
+      "cause": "Dasharatha fears that Rama is too young to face the Rakshasas.",
+      "consequence": "Vishvamitra becomes angry at Dasharatha's refusal to honour his earlier promise.",
+      "source_reference_ids": [
+        "REF_BALA_019"
+      ]
+    },
+    {
+      "event_id": "BALA_SCENE_001_EVENT_07",
+      "sequence_number": 7,
+      "description": "Vasishtha advises Dasharatha to uphold his promise and explains Vishvamitra's extraordinary abilities and Rama's capacity to overcome the Rakshasas under his protection.",
+      "characters_involved": [
+        "VASISHTHA",
+        "DASHARATHA",
+        "VISHVAMITRA"
+      ],
+      "location_id": null,
+      "cause": "Dasharatha's refusal creates a conflict between his paternal concern and his promise.",
+      "consequence": "Dasharatha accepts Vasishtha's advice and agrees to send Rama.",
+      "source_reference_ids": [
+        "REF_BALA_019"
+      ]
+    },
+    {
+      "event_id": "BALA_SCENE_001_EVENT_08",
+      "sequence_number": 8,
+      "description": "Dasharatha summons Rama and Lakshmana, performs the necessary auspicious rites with the participation of the royal family and Vasishtha, and entrusts the princes to Vishvamitra.",
+      "characters_involved": [
+        "DASHARATHA",
+        "RAMA",
+        "LAKSHMANA",
+        "VISHVAMITRA",
+        "VASISHTHA"
+      ],
+      "location_id": null,
+      "cause": "Dasharatha agrees to Vishvamitra's request following Vasishtha's advice.",
+      "consequence": "Rama and Lakshmana depart with Vishvamitra.",
+      "source_reference_ids": [
+        "REF_BALA_019"
+      ]
+    }
+  ],
+
+  "dialogues": [
+    {
+      "speaker_id": "VISHVAMITRA",
+      "listener_ids": [
+        "DASHARATHA"
+      ],
+      "summary": "Explains the disruption of his sacrifice by Maricha and Subahu and requests Rama's assistance for the prescribed period.",
+      "original_text": null,
+      "source_reference_ids": [
+        "REF_BALA_019"
+      ]
+    },
+    {
+      "speaker_id": "DASHARATHA",
+      "listener_ids": [
+        "VISHVAMITRA"
+      ],
+      "summary": "Objects to sending Rama, explaining his concern about Rama's youth and offering to protect the sacrifice himself with his army.",
+      "original_text": null,
+      "source_reference_ids": [
+        "REF_BALA_019"
+      ]
+    },
+    {
+      "speaker_id": "VASISHTHA",
+      "listener_ids": [
+        "DASHARATHA"
+      ],
+      "summary": "Advises Dasharatha to honour his promise and explains that Vishvamitra is capable of protecting Rama.",
+      "original_text": null,
+      "source_reference_ids": [
+        "REF_BALA_019"
+      ]
+    }
+  ],
+
+  "objects": [],
+
+  "relationships": [
+    {
+      "entity_1": "DASHARATHA",
+      "relationship": "father_of",
+      "entity_2": "RAMA",
+      "relevance_to_scene": "Dasharatha's distress is connected to Vishvamitra's request to take his son Rama."
+    },
+    {
+      "entity_1": "VISHVAMITRA",
+      "relationship": "requests_assistance_from",
+      "entity_2": "DASHARATHA",
+      "relevance_to_scene": "Vishvamitra approaches the king for help in protecting his sacrifice."
+    },
+    {
+      "entity_1": "MARICHA",
+      "relationship": "accomplice_of",
+      "entity_2": "SUBAHU",
+      "relevance_to_scene": "Both Rakshasas participate in disrupting Vishvamitra's sacrifice."
+    },
+    {
+      "entity_1": "RAMA",
+      "relationship": "brother_of",
+      "entity_2": "LAKSHMANA",
+      "relevance_to_scene": "Lakshmana accompanies Rama when he departs with Vishvamitra."
+    },
+    {
+      "entity_1": "VASISHTHA",
+      "relationship": "advises",
+      "entity_2": "DASHARATHA",
+      "relevance_to_scene": "Vasishtha advises Dasharatha to honour his promise to Vishvamitra."
+    }
+  ],
+
+  "emotions_and_themes": {
+    "emotions": [
+      "Anxiety",
+      "Grief",
+      "Determination",
+      "Paternal affection",
+      "Anger",
+      "Concern"
+    ],
+    "themes": [
+      "Protection of sacred rituals",
+      "Duty and responsibility",
+      "Paternal affection",
+      "Keeping one's promise",
+      "Trust in a capable protector"
+    ],
+    "values": [
+      "Commitment to religious duty",
+      "Respect for sages",
+      "Honouring promises",
+      "Protection of sacred practices"
+    ]
+  },
+
+  "scene_connections": {
+    "previous_scene_ids": [],
+    "next_scene_ids": [
+      "BALA_SCENE_002"
+    ],
+    "related_scene_ids": []
+  },
+
+  "narrative_significance": {
+    "importance": "This episode initiates Rama and Lakshmana's journey with Vishvamitra and establishes the circumstances under which Rama begins confronting the Rakshasas.",
+    "impact_on_story": "Vishvamitra's request and Dasharatha's eventual agreement lead to Rama and Lakshmana accompanying the sage and protecting his sacrifice.",
+    "character_development": "The episode highlights Vishvamitra's confidence in Rama, Dasharatha's paternal affection and Vasishtha's role as a guide in matters of duty."
+  },
+
+  "creative_context": {
+    "descriptive_elements": [
+      "A sage explaining the disturbance of a sacred sacrifice",
+      "A king overwhelmed by a difficult request",
+      "A royal sage guiding the king towards his duty",
+      "Two princes departing with a powerful ascetic"
+    ],
+    "natural_elements": [],
+    "symbolic_elements": [
+      "The sacrifice as a representation of sacred duty",
+      "The request as a transition from royal life to a journey of responsibility",
+      "The departure as the beginning of a new stage in Rama's life"
+    ],
+    "possible_poetic_imagery": [
+      "The contrast between a determined sage and an anxious king",
+      "The protection of sacred fire",
+      "A father's affection for his son",
+      "The departure of two princes alongside a powerful sage"
+    ]
+  },
+
+  "verification": {
+    "status": "partially_verified",
+    "verified_by": null,
+    "verification_date": null,
+    "notes": "The scene has been aligned with Manmatha Nath Dutt's Bāla Kāṇḍa, Website Chapter 3, Sections XIX to XXII. Individual narrative details and entity records still require systematic verification. Confirm the character IDs LAKSHMANA and VASISHTHA against the shared character database. The next scene identifier BALA_SCENE_002 is a planned connection and must be checked when that scene is created."
+  }
+}

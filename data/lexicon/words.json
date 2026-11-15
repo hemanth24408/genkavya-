@@ -1,0 +1,220 @@
+
+{
+  "schema_version": "1.0",
+  "lexicon_version": "2026-11-batch-01",
+  "references": {
+    "REF_001": {
+      "title": "The Cambridge Introduction to Sanskrit",
+      "edition": "2017",
+      "entry": "Chapter 6: a-stem nouns; vana, neuter forest",
+      "page": "Pages 57-67; वन paradigm on page 58",
+      "url": "https://www.cambridge.org/highereducation/books/the-cambridge-introduction-to-sanskrit/F582EC3F55C22CFDC95FACAE05C0A5D6/a-stems/A31B618ECA8A9F76AE2223E7243416E3"
+    },
+    "REF_002": {
+      "title": "A Sanskrit-English Dictionary",
+      "edition": "1899",
+      "entry": "वन (vana), forest, wood, grove",
+      "page": "Page 917",
+      "url": "https://tuninst.net/SED-MW/download-prem/v.htm"
+    },
+    "REF_003": {
+      "title": "The Student's English-Sanskrit Dictionary",
+      "edition": "1920, 3rd edition (CDSL digital transcription)",
+      "entry": "Flower: puṣpaṃ; electronic entry locator: Flower",
+      "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/AEScan/2020/web/webtc2/index.php"
+    },
+    "REF_004": {
+      "title": "The Student's English-Sanskrit Dictionary",
+      "edition": "1920, 3rd edition (CDSL digital transcription)",
+      "entry": "Fruit: phalaṃ; electronic entry locator: Fruit",
+      "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/AEScan/2020/web/webtc2/index.php"
+    },
+    "REF_005": {
+      "title": "The Student's English-Sanskrit Dictionary",
+      "edition": "1920, 3rd edition (CDSL digital transcription)",
+      "entry": "Mountain: parvataḥ; electronic entry locator: Mountain",
+      "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/AEScan/2020/web/webtc2/index.php"
+    },
+    "REF_006": {
+      "title": "A Sanskrit-English Dictionary",
+      "edition": "1899",
+      "entry": "puṣpa, noun, neuter: flower",
+      "page": "Page 639, column 2",
+      "url": "https://tuninst.net/SED-MW/download-prem/p.htm"
+    },
+    "REF_007": {
+      "title": "A Sanskrit-English Dictionary",
+      "edition": "1899",
+      "entry": "phala, noun, neuter: fruit",
+      "page": "Page 716, column 2",
+      "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/MWScanpdf/mw0716-phakka.pdf"
+    },
+    "REF_008": {
+      "title": "A Sanskrit-English Dictionary",
+      "edition": "1899",
+      "entry": "parvata, noun, masculine: mountain",
+      "page": "Page 609, column 2",
+      "url": "https://www.sanskrit-lexicon.uni-koeln.de/scans/MWScan/MWScanpdf/mw0609-paryarSaNa.pdf"
+    },
+    "REF_009": {
+      "title": "The Cambridge Introduction to Sanskrit",
+      "edition": "2017",
+      "entry": "Chapter 6: masculine and neuter a-stem paradigms; n-retroflexion",
+      "page": "Pages 57-58",
+      "url": "https://www.cambridge.org/highereducation/books/the-cambridge-introduction-to-sanskrit/F582EC3F55C22CFDC95FACAE05C0A5D6/a-stems/A31B618ECA8A9F76AE2223E7243416E3"
+    },
+    "REF_010": {
+      "title": "A Practical Sanskrit Introductory",
+      "edition": "June 1996",
+      "entry": "Lesson 6.B.2: neuter phala paradigm",
+      "page": "Page 51",
+      "url": "https://textbookequity.org/Textbooks/wikner_small%20size.pdf"
+    }
+  },
+  "entries": [
+    {
+      "word_id": "WORD_001",
+      "english_meanings": [
+        "forest"
+      ],
+      "lemma": {
+        "base_lemma_id": "LEMMA_001",
+        "stem_id": "STEM_001",
+        "devanagari": "वन",
+        "iast": "vana",
+        "part_of_speech": "noun",
+        "grammar": {
+          "gender": "neuter",
+          "additional": {
+            "stem_type": "a_stem"
+          }
+        },
+        "verification": {
+          "status": "verified",
+          "reference_ids": [
+            "REF_001",
+            "REF_002"
+          ]
+        }
+      },
+      "inflections": [
+        {
+          "form_id": "FORM_001",
+          "devanagari": "वनम्",
+          "iast": "vanam",
+          "base_lemma_id": "LEMMA_001",
+          "stem_id": "STEM_001",
+          "part_of_speech": "noun",
+          "grammar": {
+            "case": "nominative",
+            "number": "singular",
+            "gender": "neuter"
+          },
+          "verification": {
+            "status": "verified",
+            "reference_ids": [
+              "REF_001"
+            ]
+          }
+        },
+        {
+          "form_id": "FORM_002",
+          "devanagari": "वने",
+          "iast": "vane",
+          "base_lemma_id": "LEMMA_001",
+          "stem_id": "STEM_001",
+          "part_of_speech": "noun",
+          "grammar": {
+            "case": "locative",
+            "number": "singular",
+            "gender": "neuter"
+          },
+          "verification": {
+            "status": "verified",
+            "reference_ids": [
+              "REF_001"
+            ]
+          }
+        },
+        {
+          "form_id": "FORM_003",
+          "devanagari": "वनानि",
+          "iast": "vanāni",
+          "base_lemma_id": "LEMMA_001",
+          "stem_id": "STEM_001",
+          "part_of_speech": "noun",
+          "grammar": {
+            "case": "nominative",
+            "number": "plural",
+            "gender": "neuter"
+          },
+          "verification": {
+            "status": "verified",
+            "reference_ids": [
+              "REF_001"
+            ]
+          }
+        }
+      ],
+      "derivations": []
+    },
+    {
+      "word_id": "WORD_002",
+      "english_meanings": ["flower"],
+      "lemma": {
+        "base_lemma_id": "LEMMA_002",
+        "stem_id": "STEM_002",
+        "devanagari": "पुष्प",
+        "iast": "puṣpa",
+        "part_of_speech": "noun",
+        "grammar": {"gender": "neuter", "additional": {"stem_type": "a_stem"}},
+        "verification": {"status": "verified", "reference_ids": ["REF_003", "REF_006"]}
+      },
+      "inflections": [
+        {"form_id": "FORM_004", "devanagari": "पुष्पम्", "iast": "puṣpam", "base_lemma_id": "LEMMA_002", "stem_id": "STEM_002", "part_of_speech": "noun", "grammar": {"case": "nominative/accusative", "number": "singular", "gender": "neuter"}, "verification": {"status": "verified", "reference_ids": ["REF_009"]}},
+        {"form_id": "FORM_005", "devanagari": "पुष्पे", "iast": "puṣpe", "base_lemma_id": "LEMMA_002", "stem_id": "STEM_002", "part_of_speech": "noun", "grammar": {"case": "locative", "number": "singular", "gender": "neuter"}, "verification": {"status": "verified", "reference_ids": ["REF_009"]}},
+        {"form_id": "FORM_006", "devanagari": "पुष्पाणि", "iast": "puṣpāṇi", "base_lemma_id": "LEMMA_002", "stem_id": "STEM_002", "part_of_speech": "noun", "grammar": {"case": "nominative/accusative", "number": "plural", "gender": "neuter"}, "verification": {"status": "verified", "reference_ids": ["REF_009"]}}
+      ],
+      "derivations": []
+    },
+    {
+      "word_id": "WORD_003",
+      "english_meanings": ["fruit"],
+      "lemma": {
+        "base_lemma_id": "LEMMA_003",
+        "stem_id": "STEM_003",
+        "devanagari": "फल",
+        "iast": "phala",
+        "part_of_speech": "noun",
+        "grammar": {"gender": "neuter", "additional": {"stem_type": "a_stem"}},
+        "verification": {"status": "verified", "reference_ids": ["REF_004", "REF_007"]}
+      },
+      "inflections": [
+        {"form_id": "FORM_007", "devanagari": "फलम्", "iast": "phalam", "base_lemma_id": "LEMMA_003", "stem_id": "STEM_003", "part_of_speech": "noun", "grammar": {"case": "nominative/accusative", "number": "singular", "gender": "neuter"}, "verification": {"status": "verified", "reference_ids": ["REF_009", "REF_010"]}},
+        {"form_id": "FORM_008", "devanagari": "फले", "iast": "phale", "base_lemma_id": "LEMMA_003", "stem_id": "STEM_003", "part_of_speech": "noun", "grammar": {"case": "locative", "number": "singular", "gender": "neuter"}, "verification": {"status": "verified", "reference_ids": ["REF_009", "REF_010"]}},
+        {"form_id": "FORM_009", "devanagari": "फलानि", "iast": "phalāni", "base_lemma_id": "LEMMA_003", "stem_id": "STEM_003", "part_of_speech": "noun", "grammar": {"case": "nominative/accusative", "number": "plural", "gender": "neuter"}, "verification": {"status": "verified", "reference_ids": ["REF_009", "REF_010"]}}
+      ],
+      "derivations": []
+    },
+    {
+      "word_id": "WORD_004",
+      "english_meanings": ["mountain"],
+      "lemma": {
+        "base_lemma_id": "LEMMA_004",
+        "stem_id": "STEM_004",
+        "devanagari": "पर्वत",
+        "iast": "parvata",
+        "part_of_speech": "noun",
+        "grammar": {"gender": "masculine", "additional": {"stem_type": "a_stem"}},
+        "verification": {"status": "verified", "reference_ids": ["REF_005", "REF_008"]}
+      },
+      "inflections": [
+        {"form_id": "FORM_010", "devanagari": "पर्वतः", "iast": "parvataḥ", "base_lemma_id": "LEMMA_004", "stem_id": "STEM_004", "part_of_speech": "noun", "grammar": {"case": "nominative", "number": "singular", "gender": "masculine"}, "verification": {"status": "verified", "reference_ids": ["REF_009"]}},
+        {"form_id": "FORM_011", "devanagari": "पर्वतम्", "iast": "parvatam", "base_lemma_id": "LEMMA_004", "stem_id": "STEM_004", "part_of_speech": "noun", "grammar": {"case": "accusative", "number": "singular", "gender": "masculine"}, "verification": {"status": "verified", "reference_ids": ["REF_009"]}},
+        {"form_id": "FORM_012", "devanagari": "पर्वते", "iast": "parvate", "base_lemma_id": "LEMMA_004", "stem_id": "STEM_004", "part_of_speech": "noun", "grammar": {"case": "locative", "number": "singular", "gender": "masculine"}, "verification": {"status": "verified", "reference_ids": ["REF_009"]}},
+        {"form_id": "FORM_013", "devanagari": "पर्वताः", "iast": "parvatāḥ", "base_lemma_id": "LEMMA_004", "stem_id": "STEM_004", "part_of_speech": "noun", "grammar": {"case": "nominative", "number": "plural", "gender": "masculine"}, "verification": {"status": "verified", "reference_ids": ["REF_009"]}}
+      ],
+      "derivations": []
+    }
+  ]
+}

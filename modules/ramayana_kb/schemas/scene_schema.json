@@ -1,0 +1,373 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "GenKavya Ramayana Scene Schema",
+  "description": "Standard structure for documenting verified scenes from the Valmiki Ramayana.",
+  "type": "object",
+  "additionalProperties": false,
+
+  "required": [
+    "scene_id",
+    "scene_name",
+    "classification",
+    "source",
+    "setting",
+    "background",
+    "characters",
+    "event_sequence",
+    "dialogues",
+    "objects",
+    "relationships",
+    "emotions_and_themes",
+    "scene_connections",
+    "narrative_significance",
+    "creative_context",
+    "verification"
+  ],
+
+  "properties": {
+    "scene_id": {
+      "type": "string",
+      "description": "Unique identifier for this scene."
+    },
+
+    "scene_name": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["english", "sanskrit", "iast"],
+      "properties": {
+        "english": { "type": "string" },
+        "sanskrit": { "type": ["string", "null"] },
+        "iast": { "type": ["string", "null"] }
+      }
+    },
+
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kanda_id",
+        "kanda_name",
+        "chapter_number",
+        "chapter_name",
+        "scene_number",
+        "scene_category"
+      ],
+      "properties": {
+        "kanda_id": { "type": "string" },
+        "kanda_name": { "type": "string" },
+        "chapter_number": { "type": ["integer", "null"] },
+        "chapter_name": { "type": ["string", "null"] },
+        "scene_number": { "type": ["integer", "null"] },
+        "scene_category": { "type": "string" }
+      }
+    },
+
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source_id",
+        "book_title",
+        "translator",
+        "website",
+        "chapter_url",
+        "reference_location",
+        "original_verse_reference"
+      ],
+      "properties": {
+        "source_id": { "type": "string" },
+        "book_title": { "type": "string" },
+        "translator": { "type": "string" },
+        "website": { "type": "string" },
+        "chapter_url": { "type": ["string", "null"] },
+        "reference_location": { "type": ["string", "null"] },
+        "original_verse_reference": { "type": ["string", "null"] }
+      }
+    },
+
+    "setting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "primary_location_id",
+        "other_locations",
+        "time_period",
+        "environment",
+        "description"
+      ],
+      "properties": {
+        "primary_location_id": { "type": ["string", "null"] },
+        "other_locations": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "time_period": { "type": ["string", "null"] },
+        "environment": { "type": "string" },
+        "description": { "type": "string" }
+      }
+    },
+
+    "background": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["summary", "previous_scene_ids", "relevant_events"],
+      "properties": {
+        "summary": { "type": "string" },
+        "previous_scene_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "relevant_events": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "characters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "character_id",
+          "role_in_scene",
+          "actions",
+          "motivation",
+          "emotional_state"
+        ],
+        "properties": {
+          "character_id": { "type": "string" },
+          "role_in_scene": { "type": "string" },
+          "actions": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "motivation": { "type": ["string", "null"] },
+          "emotional_state": { "type": ["string", "null"] }
+        }
+      }
+    },
+
+    "event_sequence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "event_id",
+          "sequence_number",
+          "description",
+          "characters_involved",
+          "location_id",
+          "cause",
+          "consequence",
+          "source_reference_ids"
+        ],
+        "properties": {
+          "event_id": { "type": "string" },
+          "sequence_number": { "type": "integer", "minimum": 1 },
+          "description": { "type": "string" },
+          "characters_involved": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "location_id": { "type": ["string", "null"] },
+          "cause": { "type": ["string", "null"] },
+          "consequence": { "type": ["string", "null"] },
+          "source_reference_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+
+    "dialogues": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "speaker_id",
+          "listener_ids",
+          "summary",
+          "original_text",
+          "source_reference_ids"
+        ],
+        "properties": {
+          "speaker_id": { "type": "string" },
+          "listener_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "summary": { "type": "string" },
+          "original_text": { "type": ["string", "null"] },
+          "source_reference_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+
+    "objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "object_id",
+          "role_in_scene",
+          "description",
+          "associated_character_ids"
+        ],
+        "properties": {
+          "object_id": { "type": "string" },
+          "role_in_scene": { "type": "string" },
+          "description": { "type": "string" },
+          "associated_character_ids": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        }
+      }
+    },
+
+    "relationships": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "entity_1",
+          "relationship",
+          "entity_2",
+          "relevance_to_scene"
+        ],
+        "properties": {
+          "entity_1": { "type": "string" },
+          "relationship": { "type": "string" },
+          "entity_2": { "type": "string" },
+          "relevance_to_scene": { "type": "string" }
+        }
+      }
+    },
+
+    "emotions_and_themes": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["emotions", "themes", "values"],
+      "properties": {
+        "emotions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "themes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "values": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "scene_connections": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "previous_scene_ids",
+        "next_scene_ids",
+        "related_scene_ids"
+      ],
+      "properties": {
+        "previous_scene_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "next_scene_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "related_scene_ids": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "narrative_significance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "importance",
+        "impact_on_story",
+        "character_development"
+      ],
+      "properties": {
+        "importance": { "type": "string" },
+        "impact_on_story": { "type": "string" },
+        "character_development": { "type": "string" }
+      }
+    },
+
+    "creative_context": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "descriptive_elements",
+        "natural_elements",
+        "symbolic_elements",
+        "possible_poetic_imagery"
+      ],
+      "properties": {
+        "descriptive_elements": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "natural_elements": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "symbolic_elements": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "possible_poetic_imagery": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+
+    "verification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status",
+        "verified_by",
+        "verification_date",
+        "notes"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "not_verified",
+            "partially_verified",
+            "verified",
+            "needs_correction"
+          ]
+        },
+        "verified_by": { "type": ["string", "null"] },
+        "verification_date": {
+          "type": ["string", "null"],
+          "format": "date"
+        },
+        "notes": { "type": "string" }
+      }
+    }
+  }
+}

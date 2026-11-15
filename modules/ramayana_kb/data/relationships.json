@@ -1,0 +1,125 @@
+
+[
+  {
+    "relationship_id": "REL_001",
+    "entity_1": {
+      "entity_type": "character",
+      "entity_id": "RAMA"
+    },
+    "relationship_type": "son_of",
+    "entity_2": {
+      "entity_type": "character",
+      "entity_id": "DASHARATHA"
+    },
+    "description": "Rama is the son of King Dasharatha.",
+    "source_reference_ids": [
+      "REF_BALA_019"
+    ],
+    "associated_scene_ids": [
+      "BALA_SCENE_001"
+    ],
+    "verification_status": "partially_verified"
+  },
+  {
+    "relationship_id": "REL_002",
+    "entity_1": {
+      "entity_type": "character",
+      "entity_id": "VISHVAMITRA"
+    },
+    "relationship_type": "requests_assistance_from",
+    "entity_2": {
+      "entity_type": "character",
+      "entity_id": "DASHARATHA"
+    },
+    "description": "Vishvamitra approaches Dasharatha to request Rama's assistance.",
+    "source_reference_ids": [
+      "REF_BALA_019"
+    ],
+    "associated_scene_ids": [
+      "BALA_SCENE_001"
+    ],
+    "verification_status": "partially_verified"
+  },
+  {
+    "relationship_id": "REL_003",
+    "entity_1": {
+      "entity_type": "character",
+      "entity_id": "MARICHA"
+    },
+    "relationship_type": "associated_with",
+    "entity_2": {
+      "entity_type": "character",
+      "entity_id": "SUBAHU"
+    },
+    "description": "Maricha and Subahu are associated in disrupting Vishvamitra's sacrifice.",
+    "source_reference_ids": [
+      "REF_BALA_019"
+    ],
+    "associated_scene_ids": [
+      "BALA_SCENE_001"
+    ],
+    "verification_status": "partially_verified"
+  },
+
+  {
+    "relationship_id": "REL_004",
+    "entity_1": {
+      "entity_type": "character",
+      "entity_id": "LAKSHMANA"
+    },
+    "relationship_type": "younger_brother_of",
+    "entity_2": {
+      "entity_type": "character",
+      "entity_id": "RAMA"
+    },
+    "description": "Lakshmana is the younger brother of Rama.",
+    "source_reference_ids": [
+      "REF_BALA_019"
+    ],
+    "associated_scene_ids": [
+      "BALA_SCENE_001"
+    ],
+    "verification_status": "partially_verified"
+  },
+  {
+    "relationship_id": "REL_005",
+    "entity_1": {
+      "entity_type": "character",
+      "entity_id": "VASISHTHA"
+    },
+    "relationship_type": "advises",
+    "entity_2": {
+      "entity_type": "character",
+      "entity_id": "DASHARATHA"
+    },
+    "description": "Vasishtha advises Dasharatha to honour his commitment to Vishvamitra.",
+    "source_reference_ids": [
+      "REF_BALA_019"
+    ],
+    "associated_scene_ids": [
+      "BALA_SCENE_001"
+    ],
+    "verification_status": "partially_verified"
+  },
+  {
+    "relationship_id": "REL_006",
+    "entity_1": {
+      "entity_type": "character",
+      "entity_id": "RAMA"
+    },
+    "relationship_type": "travels_with",
+    "entity_2": {
+      "entity_type": "character",
+      "entity_id": "VISHVAMITRA"
+    },
+    "description": "Rama departs with Vishvamitra after Dasharatha agrees to send him.",
+    "source_reference_ids": [
+      "REF_BALA_019"
+    ],
+    "associated_scene_ids": [
+      "BALA_SCENE_001"
+    ],
+    "verification_status": "partially_verified"
+  }
+
+]

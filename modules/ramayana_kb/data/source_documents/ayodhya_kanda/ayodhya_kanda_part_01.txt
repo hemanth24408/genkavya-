@@ -1,0 +1,6 @@
+SOURCE: The Ramayana of Valmiki
+TRANSLATOR: Manmatha Nath Dutt
+WEBSITE_CHAPTER: 3
+KANDA: ayodhya kanda
+PART: 1
+SOURCE_URL: [Original webpage URL]
