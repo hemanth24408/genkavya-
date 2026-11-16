@@ -64,7 +64,7 @@ SANSKRIT_CANDIDATE_OUTPUT_SCHEMA = {
             "items": {
                 "type": "string",
                 "minLength": 1,
-                "pattern": "^(?!.*[\\r\\n])[^\\r\\n]+$",
+                "pattern": "^[^\\r\\n]+$",
             },
             "minItems": 4,
             "maxItems": 4,

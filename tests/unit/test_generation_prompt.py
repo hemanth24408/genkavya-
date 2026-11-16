@@ -83,6 +83,10 @@ def test_exact_approved_forms_are_prominent_and_require_literal_standalone_spell
     assert "POSITION 4 — mountain: पर्वत | पर्वतः | पर्वतम् | पर्वते | पर्वताः" in prompt
     assert "copy at least one listed Devanagari spelling exactly, including its ending" in prompt
     assert "anusvāra/visarga distinction" in prompt
+    assert "PRESERVE EVERY DEVANAGARI CHARACTER EXACTLY" in prompt
+    assert "Dental न and retroflex ण are different" in prompt
+    assert "पुष्पाणि is approved; पुष्पानि is not" in prompt
+    assert "Use only the listed approved forms; do not respell or independently inflect them" in prompt
     assert "complete standalone token separated from neighboring text by whitespace" in prompt
     assert "Do not use approximate spellings, unapproved inflections, synonyms, compounds, or sandhi transformations" in prompt
     assert "confirm that every one of the four positions has at least one exact standalone occurrence" in prompt

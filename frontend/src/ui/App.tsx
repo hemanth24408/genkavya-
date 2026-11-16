@@ -1,6 +1,6 @@
 import { useEffect, useState, type FormEvent } from 'react'
 import { ArrowDown, ArrowDownToLine, ArrowRight, BookOpen, Check, ChevronDown, CircleAlert, Copy, Feather, Menu, Sparkles, X } from 'lucide-react'
-import { generatePoetry } from '../services/generation'
+import { generatePoetry, loadGeneratedDemo } from '../services/generation'
 import type { Candidate, CheckStatus } from '../types'
 
 type ReaderTab = 'sanskrit' | 'meaning' | 'transliteration'
@@ -44,14 +44,15 @@ function CandidateValidation({ candidate }: { candidate: Candidate }) {
   const grammarStatus: CheckStatus = candidate.grammar_status === 'verified' ? 'passed' : candidate.grammar_status === 'issues_found' ? 'failed' : 'unverified'
   return <div className="validation-grid">
     <section><h4>Mandatory words</h4><Pill status={words.status}>{words.status === 'passed' ? 'All words present' : words.status === 'failed' ? 'Some words missing' : 'Unverified'}</Pill>
-      {words.present.length > 0 && <p className="validation-note">Matched: {words.present.map(word => `${word.english} · ${word.matched_form_devanagari}`).join(', ')}</p>}
+      {words.present.length > 0 && <p className="validation-note">Matched: {words.present.map(word => `position ${word.input_position}: ${word.english} · ${word.matched_form_devanagari}`).join(', ')}</p>}
       {words.missing_positions.length > 0 && <p className="validation-note">Missing positions: {words.missing_positions.join(', ')}</p>}
       {words.unresolved_positions.length > 0 && <p className="validation-note">Unresolved positions: {words.unresolved_positions.join(', ')}</p>}
       {words.explanation && <p className="validation-note">{words.explanation}</p>}
     </section>
     <section><h4>Meter · Anuṣṭubh</h4><Pill status={candidate.meter.status}>{statusText[candidate.meter.status]}</Pill>
-      <div className="syllables">{candidate.meter.syllable_counts.map((count, index) => <span key={index}>Pāda {index + 1}<b>{count ?? '—'}</b></span>)}</div>
+      <div className="syllables">{candidate.meter.syllable_counts.map((count, index) => <span key={index}>Pāda {index + 1}<b>{count ?? '—'} · {candidate.meter.laghu_guru_patterns[index] ?? '—'}</b></span>)}</div>
       {candidate.meter.explanation && <p className="validation-note">{candidate.meter.explanation}</p>}
+      {candidate.meter.checks.map(check => <p className="validation-note" key={check.check}>{check.check.replace(/_/g, ' ')} · {statusText[check.status]}: {check.explanation}</p>)}
     </section>
     <section><h4>Grammar</h4><Pill status={grammarStatus}>{candidate.grammar_status.toUpperCase()}</Pill></section>
     <section><h4>Duplicate detection</h4><Pill status={candidate.duplicate_candidate ? 'failed' : 'passed'}>{candidate.duplicate_candidate ? 'Duplicate candidate' : 'Unique candidate'}</Pill></section>
@@ -63,10 +64,11 @@ export default function App() {
   const [words, setWords] = useState(['', '', '', ''])
   const [results, setResults] = useState<Candidate[] | null>(null)
   const [activeCandidate, setActiveCandidate] = useState(0)
-  const [mode, setMode] = useState<'demo' | 'live' | null>(null)
   const [readerTab, setReaderTab] = useState<ReaderTab>('sanskrit')
   const [loading, setLoading] = useState(false)
+  const [demoLoading, setDemoLoading] = useState(false)
   const [error, setError] = useState('')
+  const [demoSource, setDemoSource] = useState('')
   const [mobileOpen, setMobileOpen] = useState(false)
   const [validationOpen, setValidationOpen] = useState(false)
   const [copied, setCopied] = useState(false)
@@ -106,6 +108,7 @@ export default function App() {
   async function submit(event: FormEvent) {
     event.preventDefault()
     setError('')
+    setDemoSource('')
     if (!scene.trim()) { setError('Describe a scene from the Ramayana to begin.'); return }
     if (enteredWords.length !== 4) { setError('Enter exactly four mandatory words, one in each field.'); return }
     if (words.some(word => !/^[A-Za-z]+(?:['’-][A-Za-z]+)*$/.test(word.trim()))) { setError('Each mandatory word should be one English word.'); return }
@@ -114,13 +117,29 @@ export default function App() {
     try {
       const output = await generatePoetry(scene.trim(), words.map(word => word.trim()))
       setResults(output.candidates)
-      setMode(output.mode)
       setActiveCandidate(0)
       setReaderTab('sanskrit')
       window.setTimeout(() => document.getElementById('results')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60)
     } catch (cause) {
       setError(cause instanceof Error ? cause.message : 'Something went wrong. Please try again.')
     } finally { setLoading(false) }
+  }
+
+  async function loadDemo() {
+    setError('')
+    setDemoLoading(true)
+    try {
+      const output = await loadGeneratedDemo()
+      setScene(output.scene)
+      setWords(output.words)
+      setResults(output.candidates)
+      setDemoSource(output.source)
+      setActiveCandidate(0)
+      setReaderTab('sanskrit')
+      window.setTimeout(() => document.getElementById('results')?.scrollIntoView({ behavior: 'smooth', block: 'start' }), 60)
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : 'The demonstration could not be loaded.')
+    } finally { setDemoLoading(false) }
   }
 
   return <div className="site-shell">
@@ -168,7 +187,7 @@ export default function App() {
               <div className="word-heading"><div className="workspace-title"><span className="step-number">02</span><div><h3>Four words to weave in</h3><p>Choose four English words to inspire your Sanskrit verse.</p></div></div><span className={`word-counter ${enteredWords.length === 4 ? 'complete' : ''}`}>{enteredWords.length} / 4</span></div>
               <div className="word-inputs">{words.map((word, index) => <label className="word-field" key={index}><span>WORD 0{index + 1}</span><input value={word} onChange={event => setWords(current => current.map((currentWord, currentIndex) => currentIndex === index ? event.target.value : currentWord))} placeholder={['forest', 'dawn', 'courage', 'journey'][index]} aria-label={`Word ${index + 1}`} pattern="[A-Za-z]+(['’-][A-Za-z]+)*" maxLength={40} /></label>)}</div>
               {error && <div className="error-message" role="alert"><CircleAlert size={16} />{error}</div>}
-              <div className="generate-row"><div className="privacy-note"><i />Your imagination. An ancient art.</div><div className="generate-action"><button className="generate-button" type="submit" disabled={loading}>{loading ? <><span className="spinner" />Weaving your verses…</> : <><Sparkles size={16} />Preview my padyam<ArrowRight size={16} /></>}</button><small>Interactive design preview · AI generation is not connected.</small></div></div>
+              <div className="generate-row"><div className="privacy-note"><i />Your imagination. An ancient art.</div><div className="generate-action"><button className="generate-button" type="submit" disabled={loading || demoLoading}>{loading ? <><span className="spinner" />Weaving your verses…</> : <><Sparkles size={16} />Generate my padyams<ArrowRight size={16} /></>}</button><button type="button" onClick={loadDemo} disabled={loading || demoLoading} style={{ width: '100%', minHeight: 48, marginTop: 10, padding: '10px 14px', border: '1px solid #8f642f', borderRadius: 10, background: '#a8793d', color: '#fff', fontWeight: 700, fontSize: 14, cursor: loading || demoLoading ? 'wait' : 'pointer', boxShadow: '0 4px 12px #67313b20' }}>{demoLoading ? 'Loading saved demo…' : 'Load pre-generated demo'}</button><small>Shows saved Qwen output · no API or model call</small><small>Five candidates · independent validation results</small></div></div>
             </form>
             <aside className="guidance-panel"><div className="eyebrow"><BookOpen size={16} strokeWidth={1.4} /> A LITTLE GUIDANCE</div><h3>The story is ancient.<br /><em>The perspective is<br />yours.</em></h3><p>You don’t need to be a poet. Just bring a moment that means something to you.</p><div className="guidance-ornament"><i />काव्यम्<i /></div><h4>A thoughtful brief makes a difference</h4><ol><li><span>1</span>Focus on one scene, rather than the whole epic.</li><li><span>2</span>Tell us what the characters feel, not just what they do.</li><li><span>3</span>Choose words that bring your scene to life.</li></ol><div className="creative-brief"><span>YOUR CREATIVE BRIEF</span><i /><i /><i /><i /><i /><small>A story and four words. That’s all it takes.</small></div></aside>
           </div>
@@ -179,17 +198,18 @@ export default function App() {
       <section className="results-section" id="results" aria-live="polite">
         {loading && <div className="loading-state"><div className="loading-star">✳</div><h3>Listening for the verse…</h3><p>Your scene is finding its Sanskrit voice.</p><div className="loading-line"><i /></div></div>}
         {results && active && <div className="results-card">
-          <div className="results-heading"><div><div className="eyebrow"><i /> YOUR NEXT CHAPTER</div><h2>Your composition brief is ready.</h2></div><span className="preview-badge">{mode === 'demo' ? 'Design preview' : 'Generated with GenKavya'}</span></div>
+          <div className="results-heading"><div><div className="eyebrow"><i /> YOUR NEXT CHAPTER</div><h2>Your generated poems are ready.</h2></div><span className="preview-badge" title={demoSource || undefined}>{demoSource ? 'Pre-generated demo · not live API' : 'Generated with GenKavya'}</span></div>
+          {demoSource && <p role="status" style={{ margin: '12px 0 0', color: '#795f48', fontSize: 13 }}>This is saved output from an earlier live Qwen pipeline run, not a response generated by the current API request.</p>}
           <div className="results-body">
-            <div className="brief-column"><span className="result-overline">YOUR RAMAYANA MOMENT</span><p className="brief-scene">{scene}</p><span className="result-overline words-overline">WORDS TO WEAVE IN</span><div className="brief-words">{words.map((word, index) => <span key={`${index}-${word}`}>{word}</span>)}</div><p className="brief-note">This is your brief, not a generated poem. The traditional verse alongside it is a sample of the reading experience.</p><button className="refine-link" onClick={scrollToStudio}>Refine my story <ArrowRight size={23} /></button>
+            <div className="brief-column"><span className="result-overline">YOUR RAMAYANA MOMENT</span><p className="brief-scene">{scene}</p><span className="result-overline words-overline">WORDS TO WEAVE IN</span><div className="brief-words">{words.map((word, index) => <span key={`${index}-${word}`}>{word}</span>)}</div><p className="brief-note">Each generated candidate is shown with its own mandatory-word, meter, and grammar results.</p><button className="refine-link" onClick={scrollToStudio}>Refine my story <ArrowRight size={23} /></button>
               <div className="candidate-list-label">YOUR FIVE COMPOSITIONS</div><div className="candidate-list">{results.map((candidate, index) => <button key={candidate.candidate_id} className={index === activeCandidate ? 'candidate-option selected' : 'candidate-option'} onClick={() => { setActiveCandidate(index); setValidationOpen(false) }}><span>{String(index + 1).padStart(2, '0')}</span><span>Candidate {index + 1}<small>{candidate.english_summary}</small></span><ArrowRight size={14} /></button>)}</div>
             </div>
             <div className="reader-card">
-              <div className="reader-top"><span>A VERSE FROM THE RAMAYANA</span><Sparkles size={21} /></div>
+              <div className="reader-top"><span>YOUR GENERATED PĀDYAM</span><Sparkles size={21} /></div>
               <div className="reader-tabs" role="tablist" aria-label="Verse presentation">{(['sanskrit', 'meaning', 'transliteration'] as ReaderTab[]).map(tab => <button role="tab" aria-selected={readerTab === tab} className={readerTab === tab ? 'active' : ''} key={tab} onClick={() => setReaderTab(tab)}>{tab === 'sanskrit' ? 'Sanskrit' : tab === 'meaning' ? 'Meaning' : 'Transliteration'}</button>)}</div>
               <div className={`reader-poem ${readerTab !== 'sanskrit' ? 'reader-translation' : ''}`} lang={readerTab === 'sanskrit' ? 'sa' : 'en'}>{readerTab === 'sanskrit' ? active.padas.map((pada, index) => <p key={`${active.candidate_id}-${index}`}>{pada}</p>) : readerTab === 'meaning' ? <p>{active.english_summary}</p> : active.padas.map((pada, index) => <p key={`${active.candidate_id}-${index}`}>{transliterate(pada)}</p>)}</div>
               <div className="reader-summary">{readerTab === 'meaning' ? 'ENGLISH SUMMARY' : readerTab === 'transliteration' ? 'IAST TRANSLITERATION' : 'CANDIDATE ' + String(activeCandidate + 1).padStart(2, '0')}</div>
-              <div className="reader-actions"><button onClick={copyPoem}>{copied ? <Check size={18} /> : <Copy size={18} />}{copied ? 'Copied' : 'Copy sample verse'}</button><button onClick={downloadBrief}><ArrowDownToLine size={19} />Download brief</button></div>
+              <div className="reader-actions"><button onClick={copyPoem}>{copied ? <Check size={18} /> : <Copy size={18} />}{copied ? 'Copied' : 'Copy padyam'}</button><button onClick={downloadBrief}><ArrowDownToLine size={19} />Download brief</button></div>
               <button className="validation-toggle" onClick={() => setValidationOpen(!validationOpen)} aria-expanded={validationOpen}><span>Validation details</span><span>Independent checks <ChevronDown size={16} className={validationOpen ? 'turn' : ''} /></span></button>
               {validationOpen && <CandidateValidation candidate={active} />}
             </div>
@@ -198,7 +218,7 @@ export default function App() {
       </section>
 
       <section className="how-section" id="how"><div className="how-intro"><div className="eyebrow"><i /> A SIMPLE RITUAL</div><h2>From a thought<br />to a <em>śloka.</em></h2><p>Poetry carries meaning across centuries.<br />Find your own way into the tradition,<br />one scene at a time.</p><button onClick={scrollToStudio}>Find your first verse <ArrowRight size={18} /></button></div>
-        <div className="how-steps"><div className="how-step"><span>01</span><div><h3>Picture the moment</h3><p>A quiet forest. An ocean to cross. A promise to keep. Describe a Ramayana scene in your own words.</p></div><i><Feather size={19} /></i></div><div className="how-step"><span>02</span><div><h3>Choose your four words</h3><p>Give your inspiration a direction. Four English words become the creative starting point for your Sanskrit composition.</p></div><i className="dev-icon">अ</i></div><div className="how-step"><span>03</span><div><h3>Explore a new expression</h3><p>Preview your creative brief and discover the Sanskrit reading experience, with meaning and transliteration alongside.</p></div><i>✳</i></div></div>
+        <div className="how-steps"><div className="how-step"><span>01</span><div><h3>Picture the moment</h3><p>A quiet forest. An ocean to cross. A promise to keep. Describe a Ramayana scene in your own words.</p></div><i><Feather size={19} /></i></div><div className="how-step"><span>02</span><div><h3>Choose your four words</h3><p>Give your inspiration a direction. Four English words become the creative starting point for your Sanskrit composition.</p></div><i className="dev-icon">अ</i></div><div className="how-step"><span>03</span><div><h3>Explore a new expression</h3><p>Review generated Sanskrit candidates with their English meanings and independent validation results.</p></div><i>✳</i></div></div>
       </section>
 
       <section className="about-section" id="about"><div className="about-copy"><div className="eyebrow"><i /> A NOTE ON GENKAVYA</div><h2>Old stories.<br /><em>New ways of listening.</em></h2><p>Inspired by Dattapadi — the art of composing poetry around given words — Genkavya imagines a meeting of Sanskrit tradition and artificial intelligence. Every story is an invitation to read, reflect, and create.</p><em className="about-motto">Poetry, with a timeless soul.</em></div><div className="about-callout"><span>✳</span><h3>कल्पना च काव्यं च</h3><p>Imagination meets poetry.</p><button onClick={scrollToStudio}>Begin your story <ArrowRight size={17} /></button></div></section>

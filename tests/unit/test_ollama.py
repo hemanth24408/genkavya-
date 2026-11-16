@@ -67,13 +67,13 @@ def test_ollama_passes_json_schema_object_as_format(monkeypatch):
     assert calls[0]["format"]["properties"]["padas"]["minItems"] == 4
     assert calls[0]["format"]["properties"]["padas"]["maxItems"] == 4
     assert calls[0]["format"]["properties"]["padas"]["items"] == {
-        "type": "string", "minLength": 1, "pattern": "^(?!.*[\\r\\n])[^\\r\\n]+$",
+        "type": "string", "minLength": 1, "pattern": "^[^\\r\\n]+$",
     }
     pada_pattern = calls[0]["format"]["properties"]["padas"]["items"]["pattern"]
-    assert re.search(pada_pattern, "single line")
+    assert re.fullmatch(pada_pattern, "single line")
     for line_break in ("\n", "\r"):
-        assert re.search(pada_pattern, f"first{line_break}second") is None
-        assert re.search(pada_pattern, f"single line{line_break}") is None
+        assert re.fullmatch(pada_pattern, f"first{line_break}second") is None
+        assert re.fullmatch(pada_pattern, f"single line{line_break}") is None
     assert calls[0]["format"]["properties"]["english_summary"] == {
         "type": "string", "minLength": 1,
     }

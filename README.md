@@ -1,4 +1,5 @@
 # GenKavya
+
 ### AI-Assisted Sanskrit Dattapadi Poetry Generation System
 
 **Bridging Traditional Sanskrit Literature and Artificial Intelligence**
@@ -34,24 +35,24 @@ Dattapadi is a traditional Avadhana challenge in which a poet is required to com
 GenKavya brings this literary challenge into an AI-assisted environment.
 
 The system accepts:
+
 - A user-defined scene, situation, or theme.
 - Four prescribed words that must be incorporated into the composition.
 
 Using contextual knowledge retrieval and AI-based generation, GenKavya produces Sanskrit poetry consisting of four Padas (metrical quarters). Multiple candidate compositions are generated and evaluated against mandatory-word and metrical requirements.
 
-The system is designed to provide not just generated poetry, but also contextual relevance, word incorporation information, transliteration, meaning, and validation results.
+The system is designed to provide generated poetry, contextual relevance, word incorporation information, transliteration, meaning, and validation results.
 
 ## Key Features
 
 - **AI-Based Sanskrit Poetry Generation:** Generates Sanskrit compositions based on user-provided themes and prescribed words.
-- **RAG-Based Contextual Retrieval:** Retrieves relevant information from Ramayana knowledge sources to enrich the generation context.
+- **RAG-Based Contextual Retrieval:** Retrieves relevant information from Ramayana knowledge sources to enrich generation context.
 - **Intelligent Context Summarization:** Uses an LLM to summarize retrieved information and optimize generation prompts.
-- **Sanskrit Word Resolution:** Resolves prescribed words into appropriate Sanskrit equivalents before generation.
+- **Sanskrit Word Resolution:** Resolves prescribed words into approved Sanskrit forms before generation.
 - **Multiple Candidate Generation:** Generates five candidate compositions for evaluation.
 - **Mandatory Word Validation:** Checks the incorporation of all four prescribed words.
 - **Metrical Validation:** Evaluates compositions against the selected Classical Anuṣṭubh meter.
-- **Duplicate Detection:** Identifies and rejects duplicate compositions.
-- **Bounded Generation Retries:** Controls repeated generation attempts.
+- **Duplicate Detection:** Identifies duplicate compositions.
 - **Structured Output:** Supports Sanskrit poetry, transliteration, English meaning, and validation information.
 
 ## How It Works
@@ -87,8 +88,7 @@ The application is organized into the following major components:
 
 ### Processing Architecture
 
-<img width="1928" height="2508" alt="mermaid-diagram (1)" src="https://github.com/user-attachments/assets/d332450e-d5cf-4b5b-baec-02cc405e0d36" />
-
+<!-- Retain the existing architecture diagram image here if it was present in your previous README. -->
 
 ## Technology Stack
 
@@ -96,15 +96,15 @@ The application is organized into the following major components:
 |---|---|
 | Frontend Framework | React |
 | Frontend Build Tool | Vite |
-| Frontend Languages | JavaScript, HTML, CSS |
+| Frontend Languages | TypeScript, JavaScript, HTML, CSS |
 | Backend | Python |
-| AI Model | Qwen 2.5 7B |
+| AI Model | Qwen 2.5 |
 | Local Model Runtime | Ollama |
 | Knowledge Retrieval | Retrieval-Augmented Generation (RAG) |
 | Vector Search | FAISS |
 | Data Validation | Pydantic / Custom Validation Modules |
+| API Framework | FastAPI |
 | Testing Framework | Pytest |
-| Database | SQLite (prototype persistence) |
 
 ## AI Processing Pipeline
 
@@ -112,25 +112,20 @@ The application is organized into the following major components:
 
 The RAG module retrieves relevant information from the available Ramayana knowledge base based on the user's scene or theme.
 
-The retrieved passages provide contextual evidence to support poetry generation.
-
 ### 2. Context Summarization
 
 The retrieved information is passed to the language model to generate a concise contextual summary.
 
-This stage reduces unnecessary prompt content while preserving relevant narrative details.
-
 ### 3. Sanskrit Word Resolution
 
 The four prescribed words are interpreted and mapped to appropriate Sanskrit forms using the word-resolution component.
-
-These approved forms are supplied to the generation module.
 
 ### 4. Poetry Generation
 
 The generation module uses the configured Qwen model through Ollama.
 
 It receives:
+
 - Original user-provided scene.
 - Summarized contextual information.
 - Four approved Sanskrit word forms.
@@ -143,6 +138,7 @@ The module generates five candidate compositions, each intended to contain four 
 Generated candidates are evaluated independently of the language model.
 
 The validation process focuses on:
+
 - Mandatory-word incorporation.
 - Four-Pada structure.
 - Syllable count.
@@ -155,50 +151,32 @@ Validation results are used to classify candidates. Unsupported grammar checks a
 
 ## Project Structure
 
-The following represents the intended logical organization of the project. Actual directory names may differ as integration progresses.
+The project is organized into frontend, backend, data, and test components.
 
 ```text
 GenKavya/
-│
 ├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── pages/
-│   │   ├── services/
-│   │   ├── assets/
-│   │   └── styles/
 │   ├── public/
-│   ├── package.json
-│   └── vite.config.js
-│
-├── backend/
 │   ├── src/
-│   │   └── genkavya/
-│   │       ├── api/
-│   │       ├── rag/
-│   │       ├── words/
-│   │       ├── generation/
-│   │       ├── validation/
-│   │       ├── orchestration/
-│   │       └── output/
-│   │
-│   ├── data/
-│   │   ├── knowledge_base/
-│   │   ├── lexicon/
-│   │   └── vector_index/
-│   │
-│   ├── tests/
-│   └── requirements.txt
-│
-├── docs/
-│   ├── SRS.md
-│   ├── FEASIBILITY.md
-│   ├── ARCHITECTURE.md
-│   └── DEVELOPMENT_EVOLUTION.md
-│
-├── .env.example
-├── .gitignore
-└── README.md
+│   │   ├── services/
+│   │   ├── ui/
+│   │   └── ...
+│   ├── package.json
+│   └── vite.config.ts
+├── src/
+│   └── genkavya/
+│       ├── api.py
+│       ├── contracts/
+│       ├── generation/
+│       ├── rag/
+│       ├── ...
+├── data/
+├── tests/
+│   └── unit/
+├── pyproject.toml
+├── requirements.txt
+├── README.md
+└── .gitignore
 ```
 
 ## Installation and Setup
@@ -211,12 +189,12 @@ Ensure the following software is installed:
 - Node.js and npm.
 - Git.
 - Ollama.
-- Qwen 2.5 7B model or the model specified in the project configuration.
+- Qwen 2.5 model configured for the project.
 
 ### 1. Clone the Repository
 
 ```bash
-git clone <YOUR_GITHUB_REPOSITORY_URL>
+git clone https://github.com/hemanth24408/genkavya-.git
 cd GenKavya
 ```
 
@@ -224,16 +202,22 @@ cd GenKavya
 
 Create and activate a Python virtual environment.
 
-**Windows:**
+**Windows PowerShell:**
 
-```bash
-python -m venv .venv
-.venv\Scripts\activate
+```powershell
+py -3.13 -m venv .venv
+.\.venv\Scripts\Activate.ps1
 ```
 
 Install the backend dependencies:
 
-```bash
+```powershell
+python -m pip install -e ".[rag,validation,api,dev]"
+```
+
+Alternatively, install from the requirements file:
+
+```powershell
 pip install -r requirements.txt
 ```
 
@@ -263,13 +247,13 @@ Ensure that the model name in the project configuration matches the downloaded m
 
 Navigate to the frontend directory:
 
-```bash
+```powershell
 cd frontend
 ```
 
 Install dependencies:
 
-```bash
+```powershell
 npm install
 ```
 
@@ -277,18 +261,30 @@ npm install
 
 ## Running the Application
 
+The frontend and backend run separately during local development.
+
 ### Start the Backend
 
-From the backend project directory, run the configured Python application entry point.
+Open a terminal in the project root:
 
-The exact startup command depends on the backend entry point configured in the repository.
+```powershell
+$env:PYTHONPATH = "src"
+python -m uvicorn genkavya.api:app --host 127.0.0.1 --port 8000
+```
+
+The backend API will be available at:
+
+```text
+http://127.0.0.1:8000
+```
 
 ### Start the Frontend
 
-From the frontend directory:
+Open another terminal:
 
-```bash
-npm run dev
+```powershell
+cd frontend
+npm.cmd run dev
 ```
 
 Vite will provide a local development URL, typically:
@@ -297,9 +293,27 @@ Vite will provide a local development URL, typically:
 http://localhost:5173
 ```
 
-Ensure the backend and Ollama services are running before testing the complete application.
+The Vite development server proxies `POST /api/generate` to the backend.
 
----
+The API accepts a scene and exactly four ordered English words. For example:
+
+```json
+{
+  "scene": "Rama enters the forest",
+  "words": ["forest", "flower", "fruit", "mountain"]
+}
+```
+
+The endpoint returns the five generated candidates and their independent validation results.
+
+The command-line pipeline can also be run from the project root:
+
+```powershell
+$env:PYTHONPATH = "src"
+python -m genkavya.pipeline --scene "Rama enters the forest" --words forest flower fruit mountain
+```
+
+The command prints the generated candidates and their independent mandatory-word, meter, and grammar evaluation results as JSON.
 
 ## Testing
 
@@ -311,21 +325,22 @@ Run the complete unit test suite:
 python -m pytest tests/unit -q
 ```
 
-Run specific generation and AI-related tests:
+Run specific generation and API tests:
 
 ```bash
-python -m pytest tests/unit/test_ollama.py tests/unit/test_contracts_generation.py -q
+python -m pytest tests/unit/test_api.py tests/unit/test_contracts_generation.py tests/unit/test_ollama.py -q
 ```
 
 The testing strategy covers:
 
 - Input validation.
+- API request handling.
 - AI model communication.
 - Context summarization.
 - Sanskrit word resolution.
 - Candidate generation.
 - Mandatory-word verification.
-- Duplicate rejection.
+- Duplicate detection.
 - Meter validation.
 - Error handling.
 
@@ -335,11 +350,12 @@ Unit testing and end-to-end integration testing are treated as separate testing 
 
 ## Current Scope and Limitations
 
-- The current Sanskrit word database contains only **4 prescribed-word entries**, limiting word-resolution coverage.
-- The RAG knowledge base currently covers **2 Kandas(**&#x42;ala kanda and Aranya kand&#x61;**) of the Ramayana**, restricting contextual retrieval.
+- The Sanskrit word database has limited prescribed-word coverage.
+- The RAG knowledge base currently covers selected portions of the Ramayana.
 - Retrieval accuracy depends on the available documents and may not capture all relevant context.
 - The system currently supports four Padas in Pathyā Anuṣṭubh meter.
 - Comprehensive Sanskrit grammar verification and advanced Sandhi and Samāsa processing are not yet fully implemented.
+- Generated candidates may require further linguistic and metrical refinement.
 
 ## Future Enhancements
 
@@ -347,8 +363,8 @@ Unit testing and end-to-end integration testing are treated as separate testing 
 - Include all seven Kandas of the Ramayana in the RAG knowledge base.
 - Improve retrieval accuracy and contextual summarization.
 - Introduce advanced Sanskrit grammar validation and additional meters.
-- Improved narrative consistency.
-- Expanded Sanskrit literary knowledge sources.
+- Improve narrative consistency.
+- Expand Sanskrit literary knowledge sources.
 
 ---
 

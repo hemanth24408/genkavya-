@@ -59,7 +59,7 @@ def run_generation_report(
     return generated, validation
 
 
-def _cli_result(generated: GenerationResponse, validation: ValidationResponse) -> dict:
+def serialize_generation_report(generated: GenerationResponse, validation: ValidationResponse) -> dict:
     """Serialize poems and independent evaluation results without an overall verdict."""
     candidate_results = []
     for item in validation.candidates:
@@ -102,6 +102,11 @@ def _cli_result(generated: GenerationResponse, validation: ValidationResponse) -
     }
 
 
+def _cli_result(generated: GenerationResponse, validation: ValidationResponse) -> dict:
+    """Backward-compatible CLI serializer alias."""
+    return serialize_generation_report(generated, validation)
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     parser = argparse.ArgumentParser(description="Generate and evaluate five GenKavya Sanskrit candidates.")
     parser.add_argument("--scene", required=True, help="English Ramayana scene description")
@@ -113,7 +118,7 @@ def main(argv: Sequence[str] | None = None) -> int:
     except Exception as exc:
         print(f"GenKavya pipeline failed: {exc}", file=sys.stderr)
         return 1
-    print(json.dumps(_cli_result(response, validation), ensure_ascii=False, indent=2))
+    print(json.dumps(serialize_generation_report(response, validation), ensure_ascii=False, indent=2))
     return 0
 
 

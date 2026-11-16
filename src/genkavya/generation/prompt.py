@@ -91,6 +91,7 @@ MANDATORY WORDS
 COPY-EXACT APPROVED SPELLINGS BY INPUT POSITION
 {approved_word_lines}
 {word_data}
+PRESERVE EVERY DEVANAGARI CHARACTER EXACTLY. Dental न and retroflex ण are different: for flower, पुष्पाणि is approved; पुष्पानि is not. Use only the listed approved forms; do not respell or independently inflect them.
 All four input positions are independent requirements. For each position, copy at least one listed Devanagari spelling exactly, including its ending and any anusvāra/visarga distinction. Each required form must appear as a complete standalone token separated from neighboring text by whitespace. Each token occurrence can satisfy only one position. Choose a grammatically suitable listed form. Do not use approximate spellings, unapproved inflections, synonyms, compounds, or sandhi transformations, and do not attach a required form to neighboring text. Distribute the words naturally across the padas.
 Before returning JSON, inspect the Sanskrit padas themselves and confirm that every one of the four positions has at least one exact standalone occurrence of one of its own listed forms. An approximate spelling, a form embedded in a compound or attached to another word, or a word appearing only in the English summary does not count. If any position is missing, revise the padas before responding.
 

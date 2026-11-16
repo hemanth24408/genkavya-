@@ -20,9 +20,10 @@ frontend/dist/
 
 # Editor and operating system files
 .vscode/
-.DS_Store
+.DS_Store+
 Thumbs.db
 
 # Temporary files
 *.log
 '@ | Set-Content .gitignore
+.pytest-tmp/

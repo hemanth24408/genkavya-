@@ -1,0 +1,466 @@
+{
+  "generation": {
+    "candidates": [
+      {
+        "candidate_id": "candidate-1",
+        "padas": [
+          "वने शीतल पुष्पाणि फलानि सुन्दरी",
+          "राम लक्ष्मण पर्वते रमन्ति नीर्मिती",
+          "सीता तापसी दर्शने वनम् विक्रमी",
+          "मारीचिर विषय रहस्य विनोदविनी"
+        ],
+        "english_summary": "In the forest, with cool flowers and fruits, Rama and Lakshmana play on the mountain. Seated in the forest, Sita sees the golden deer, and Maricha's trick unfolds."
+      },
+      {
+        "candidate_id": "candidate-2",
+        "padas": [
+          "वने शीतल पुष्पाणि फलानि दिव्याणि",
+          "राम लक्ष्मण पर्वते रमन्ति विशालाः",
+          "सीता तापसी दर्शने वनम् विनोदिता",
+          "मारीचिर विषय रहस्य विनयित्वम्"
+        ],
+        "english_summary": "In the cool forest with divine flowers and fruits, Rama and Lakshmana enjoy in the vast mountain. Sita, seeing the sage, takes delight in the forest. Maricha's guise, a riddle of charm and subtlety."
+      },
+      {
+        "candidate_id": "candidate-3",
+        "padas": [
+          "वने पुष्पाणि फलानि दिव्याणि रमन्ति",
+          "राम लक्ष्मण पर्वते रमन्ति विशालाः",
+          "सीता तापसी दर्शने वनम् विनोदिता",
+          "मारीचिर विषय रहस्य विनयित्वम्"
+        ],
+        "english_summary": "In the forest, flowers and fruits shine, delighting Rama and Lakshmana; Sita is captivated, drawn by the deer; Maricha's clever disguise brings laughter and awe."
+      },
+      {
+        "candidate_id": "candidate-4",
+        "padas": [
+          "वने शीतल पुष्पाणि फलानि सुन्दरी",
+          "राम लक्ष्मण पर्वते रमन्ति नीर्मिती",
+          "सीता तापसी दर्शने वनम् विनोदिता",
+          "मारीचिर विषय रहस्य विनोदविनी"
+        ],
+        "english_summary": "In the cool forest, with beautiful flowers and fruits, Rama and Lakshmana play in the mountains. Sita is delighted by the sight, finding joy in the forest. The enchanting Maricha brings subtle amusement to this tale."
+      },
+      {
+        "candidate_id": "candidate-5",
+        "padas": [
+          "वने शीतल पुष्पाणि फलानि सुन्दरी",
+          "राम लक्ष्मण पर्वते रमन्ति विशालाः",
+          "सीता तापसी दर्शने वनम् विनोदिता",
+          "मारीचिर विषय रहस्य विनयित्वम्"
+        ],
+        "english_summary": "In the cool forest, beautiful flowers and fruits are seen; Rama and Lakshmana play in the great mountain; Sita is charmed by the sight of the forest; Maricha's trickery reveals a subtle charm."
+      }
+    ],
+    "metadata": {
+      "contract_version": "1.0",
+      "created_at": null,
+      "producer": "genkavya.generation"
+    }
+  },
+  "validation": {
+    "metadata": {
+      "contract_version": "1.0",
+      "created_at": null,
+      "producer": "genkavya.validation"
+    },
+    "candidates": [
+      {
+        "candidate_id": "candidate-1",
+        "padas": [
+          "वने शीतल पुष्पाणि फलानि सुन्दरी",
+          "राम लक्ष्मण पर्वते रमन्ति नीर्मिती",
+          "सीता तापसी दर्शने वनम् विक्रमी",
+          "मारीचिर विषय रहस्य विनोदविनी"
+        ],
+        "english_summary": "In the forest, with cool flowers and fruits, Rama and Lakshmana play on the mountain. Seated in the forest, Sita sees the golden deer, and Maricha's trick unfolds.",
+        "duplicate_candidate": false,
+        "mandatory_words": {
+          "display_status": "ALL WORDS PRESENT",
+          "status": "passed",
+          "present": [
+            {
+              "input_position": 1,
+              "english": "forest",
+              "matched_form_devanagari": "वने"
+            },
+            {
+              "input_position": 2,
+              "english": "flower",
+              "matched_form_devanagari": "पुष्पाणि"
+            },
+            {
+              "input_position": 3,
+              "english": "fruit",
+              "matched_form_devanagari": "फलानि"
+            },
+            {
+              "input_position": 4,
+              "english": "mountain",
+              "matched_form_devanagari": "पर्वते"
+            }
+          ],
+          "missing_positions": [],
+          "unresolved_positions": [],
+          "explanation": "All four input positions matched distinct exact approved-form token occurrences."
+        },
+        "meter": {
+          "status": "failed",
+          "meter": "classical_anustubh",
+          "pada_count": 4,
+          "syllable_counts": [
+            14,
+            14,
+            13,
+            15
+          ],
+          "laghu_guru_patterns": [
+            "LGGLLGGLLGLGLG",
+            "GLGLLGLGLGLGLG",
+            "GGGLGGLGLGGLG",
+            "GGLLLLLLGLLGLLG"
+          ],
+          "checks": [
+            {
+              "check": "pada_structure",
+              "status": "passed",
+              "explanation": "Exactly four non-empty pādas were supplied."
+            },
+            {
+              "check": "syllable_count",
+              "status": "failed",
+              "explanation": "Pāda syllable counts are [14, 14, 13, 15]; each must contain exactly eight syllables."
+            },
+            {
+              "check": "laghu_guru_pattern",
+              "status": "unverified",
+              "explanation": "The cadence check requires eight syllables per pāda and was not assessed."
+            }
+          ],
+          "explanation": "One or more required meter checks did not pass.",
+          "method": "chanda.analyze_text per-pada analysis; GenKavya project checks"
+        },
+        "grammar_status": "unverified"
+      },
+      {
+        "candidate_id": "candidate-2",
+        "padas": [
+          "वने शीतल पुष्पाणि फलानि दिव्याणि",
+          "राम लक्ष्मण पर्वते रमन्ति विशालाः",
+          "सीता तापसी दर्शने वनम् विनोदिता",
+          "मारीचिर विषय रहस्य विनयित्वम्"
+        ],
+        "english_summary": "In the cool forest with divine flowers and fruits, Rama and Lakshmana enjoy in the vast mountain. Sita, seeing the sage, takes delight in the forest. Maricha's guise, a riddle of charm and subtlety.",
+        "duplicate_candidate": false,
+        "mandatory_words": {
+          "display_status": "ALL WORDS PRESENT",
+          "status": "passed",
+          "present": [
+            {
+              "input_position": 1,
+              "english": "forest",
+              "matched_form_devanagari": "वने"
+            },
+            {
+              "input_position": 2,
+              "english": "flower",
+              "matched_form_devanagari": "पुष्पाणि"
+            },
+            {
+              "input_position": 3,
+              "english": "fruit",
+              "matched_form_devanagari": "फलानि"
+            },
+            {
+              "input_position": 4,
+              "english": "mountain",
+              "matched_form_devanagari": "पर्वते"
+            }
+          ],
+          "missing_positions": [],
+          "unresolved_positions": [],
+          "explanation": "All four input positions matched distinct exact approved-form token occurrences."
+        },
+        "meter": {
+          "status": "failed",
+          "meter": "classical_anustubh",
+          "pada_count": 4,
+          "syllable_counts": [
+            14,
+            14,
+            14,
+            14
+          ],
+          "laghu_guru_patterns": [
+            "LGGLLGGLLGLGGL",
+            "GLGLLGLGLGLLGG",
+            "GGGLGGLGLGLGLG",
+            "GGLLLLLLGLLLGG"
+          ],
+          "checks": [
+            {
+              "check": "pada_structure",
+              "status": "passed",
+              "explanation": "Exactly four non-empty pādas were supplied."
+            },
+            {
+              "check": "syllable_count",
+              "status": "failed",
+              "explanation": "Pāda syllable counts are [14, 14, 14, 14]; each must contain exactly eight syllables."
+            },
+            {
+              "check": "laghu_guru_pattern",
+              "status": "unverified",
+              "explanation": "The cadence check requires eight syllables per pāda and was not assessed."
+            }
+          ],
+          "explanation": "One or more required meter checks did not pass.",
+          "method": "chanda.analyze_text per-pada analysis; GenKavya project checks"
+        },
+        "grammar_status": "unverified"
+      },
+      {
+        "candidate_id": "candidate-3",
+        "padas": [
+          "वने पुष्पाणि फलानि दिव्याणि रमन्ति",
+          "राम लक्ष्मण पर्वते रमन्ति विशालाः",
+          "सीता तापसी दर्शने वनम् विनोदिता",
+          "मारीचिर विषय रहस्य विनयित्वम्"
+        ],
+        "english_summary": "In the forest, flowers and fruits shine, delighting Rama and Lakshmana; Sita is captivated, drawn by the deer; Maricha's clever disguise brings laughter and awe.",
+        "duplicate_candidate": false,
+        "mandatory_words": {
+          "display_status": "ALL WORDS PRESENT",
+          "status": "passed",
+          "present": [
+            {
+              "input_position": 1,
+              "english": "forest",
+              "matched_form_devanagari": "वने"
+            },
+            {
+              "input_position": 2,
+              "english": "flower",
+              "matched_form_devanagari": "पुष्पाणि"
+            },
+            {
+              "input_position": 3,
+              "english": "fruit",
+              "matched_form_devanagari": "फलानि"
+            },
+            {
+              "input_position": 4,
+              "english": "mountain",
+              "matched_form_devanagari": "पर्वते"
+            }
+          ],
+          "missing_positions": [],
+          "unresolved_positions": [],
+          "explanation": "All four input positions matched distinct exact approved-form token occurrences."
+        },
+        "meter": {
+          "status": "failed",
+          "meter": "classical_anustubh",
+          "pada_count": 4,
+          "syllable_counts": [
+            14,
+            14,
+            14,
+            14
+          ],
+          "laghu_guru_patterns": [
+            "LGGGLLGLGGLLGL",
+            "GLGLLGLGLGLLGG",
+            "GGGLGGLGLGLGLG",
+            "GGLLLLLLGLLLGG"
+          ],
+          "checks": [
+            {
+              "check": "pada_structure",
+              "status": "passed",
+              "explanation": "Exactly four non-empty pādas were supplied."
+            },
+            {
+              "check": "syllable_count",
+              "status": "failed",
+              "explanation": "Pāda syllable counts are [14, 14, 14, 14]; each must contain exactly eight syllables."
+            },
+            {
+              "check": "laghu_guru_pattern",
+              "status": "unverified",
+              "explanation": "The cadence check requires eight syllables per pāda and was not assessed."
+            }
+          ],
+          "explanation": "One or more required meter checks did not pass.",
+          "method": "chanda.analyze_text per-pada analysis; GenKavya project checks"
+        },
+        "grammar_status": "unverified"
+      },
+      {
+        "candidate_id": "candidate-4",
+        "padas": [
+          "वने शीतल पुष्पाणि फलानि सुन्दरी",
+          "राम लक्ष्मण पर्वते रमन्ति नीर्मिती",
+          "सीता तापसी दर्शने वनम् विनोदिता",
+          "मारीचिर विषय रहस्य विनोदविनी"
+        ],
+        "english_summary": "In the cool forest, with beautiful flowers and fruits, Rama and Lakshmana play in the mountains. Sita is delighted by the sight, finding joy in the forest. The enchanting Maricha brings subtle amusement to this tale.",
+        "duplicate_candidate": false,
+        "mandatory_words": {
+          "display_status": "ALL WORDS PRESENT",
+          "status": "passed",
+          "present": [
+            {
+              "input_position": 1,
+              "english": "forest",
+              "matched_form_devanagari": "वने"
+            },
+            {
+              "input_position": 2,
+              "english": "flower",
+              "matched_form_devanagari": "पुष्पाणि"
+            },
+            {
+              "input_position": 3,
+              "english": "fruit",
+              "matched_form_devanagari": "फलानि"
+            },
+            {
+              "input_position": 4,
+              "english": "mountain",
+              "matched_form_devanagari": "पर्वते"
+            }
+          ],
+          "missing_positions": [],
+          "unresolved_positions": [],
+          "explanation": "All four input positions matched distinct exact approved-form token occurrences."
+        },
+        "meter": {
+          "status": "failed",
+          "meter": "classical_anustubh",
+          "pada_count": 4,
+          "syllable_counts": [
+            14,
+            14,
+            14,
+            15
+          ],
+          "laghu_guru_patterns": [
+            "LGGLLGGLLGLGLG",
+            "GLGLLGLGLGLGLG",
+            "GGGLGGLGLGLGLG",
+            "GGLLLLLLGLLGLLG"
+          ],
+          "checks": [
+            {
+              "check": "pada_structure",
+              "status": "passed",
+              "explanation": "Exactly four non-empty pādas were supplied."
+            },
+            {
+              "check": "syllable_count",
+              "status": "failed",
+              "explanation": "Pāda syllable counts are [14, 14, 14, 15]; each must contain exactly eight syllables."
+            },
+            {
+              "check": "laghu_guru_pattern",
+              "status": "unverified",
+              "explanation": "The cadence check requires eight syllables per pāda and was not assessed."
+            }
+          ],
+          "explanation": "One or more required meter checks did not pass.",
+          "method": "chanda.analyze_text per-pada analysis; GenKavya project checks"
+        },
+        "grammar_status": "unverified"
+      },
+      {
+        "candidate_id": "candidate-5",
+        "padas": [
+          "वने शीतल पुष्पाणि फलानि सुन्दरी",
+          "राम लक्ष्मण पर्वते रमन्ति विशालाः",
+          "सीता तापसी दर्शने वनम् विनोदिता",
+          "मारीचिर विषय रहस्य विनयित्वम्"
+        ],
+        "english_summary": "In the cool forest, beautiful flowers and fruits are seen; Rama and Lakshmana play in the great mountain; Sita is charmed by the sight of the forest; Maricha's trickery reveals a subtle charm.",
+        "duplicate_candidate": false,
+        "mandatory_words": {
+          "display_status": "ALL WORDS PRESENT",
+          "status": "passed",
+          "present": [
+            {
+              "input_position": 1,
+              "english": "forest",
+              "matched_form_devanagari": "वने"
+            },
+            {
+              "input_position": 2,
+              "english": "flower",
+              "matched_form_devanagari": "पुष्पाणि"
+            },
+            {
+              "input_position": 3,
+              "english": "fruit",
+              "matched_form_devanagari": "फलानि"
+            },
+            {
+              "input_position": 4,
+              "english": "mountain",
+              "matched_form_devanagari": "पर्वते"
+            }
+          ],
+          "missing_positions": [],
+          "unresolved_positions": [],
+          "explanation": "All four input positions matched distinct exact approved-form token occurrences."
+        },
+        "meter": {
+          "status": "failed",
+          "meter": "classical_anustubh",
+          "pada_count": 4,
+          "syllable_counts": [
+            14,
+            14,
+            14,
+            14
+          ],
+          "laghu_guru_patterns": [
+            "LGGLLGGLLGLGLG",
+            "GLGLLGLGLGLLGG",
+            "GGGLGGLGLGLGLG",
+            "GGLLLLLLGLLLGG"
+          ],
+          "checks": [
+            {
+              "check": "pada_structure",
+              "status": "passed",
+              "explanation": "Exactly four non-empty pādas were supplied."
+            },
+            {
+              "check": "syllable_count",
+              "status": "failed",
+              "explanation": "Pāda syllable counts are [14, 14, 14, 14]; each must contain exactly eight syllables."
+            },
+            {
+              "check": "laghu_guru_pattern",
+              "status": "unverified",
+              "explanation": "The cadence check requires eight syllables per pāda and was not assessed."
+            }
+          ],
+          "explanation": "One or more required meter checks did not pass.",
+          "method": "chanda.analyze_text per-pada analysis; GenKavya project checks"
+        },
+        "grammar_status": "unverified"
+      }
+    ]
+  },
+  "demo": {
+    "label": "PRE-GENERATED QWEN DEMONSTRATION - NOT A LIVE API RESPONSE",
+    "source": "Actual five-candidate output captured in a previous completed live modular pipeline run, recorded in %TEMP%\\genkavya_summarization_live_e2e.log. The current CLI run timed out; this is not its output.",
+    "scene": "The demon Maricha disguises himself as a mesmerizing golden deer to lure Lord Rama and Lakshmana away from their forest hut, leaving Sita unguarded for Ravana to abduct.",
+    "words": [
+      "forest",
+      "flower",
+      "fruit",
+      "mountain"
+    ]
+  }
+}

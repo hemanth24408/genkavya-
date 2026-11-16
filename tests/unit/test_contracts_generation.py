@@ -1,3 +1,5 @@
+import json
+
 import pytest
 from pydantic import ValidationError
 
@@ -44,6 +46,14 @@ def test_candidate_rejects_embedded_line_breaks(line_break):
             padas=("first", f"second{line_break}continued", "third", "fourth"),
             english_summary="summary",
         )
+
+
+def test_json_decoded_candidate_with_embedded_newline_is_rejected_by_pydantic():
+    payload = json.loads(
+        r'{"candidate_id":"c1","padas":["first","second\ncontinued","third","fourth"],"english_summary":"summary"}'
+    )
+    with pytest.raises(ValidationError, match="single line"):
+        SanskritCandidate.model_validate(payload)
 
 
 def test_generation_request_requires_exactly_five_candidates():
